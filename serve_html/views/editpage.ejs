@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <style>
+    body {
+      font-family: "Times New Roman", times, serif;
+    }
+    
+    .navpane {
+      height: 100%;
+      width: 180px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: #111;
+      overflow-x: hidden;
+      padding-top: 10px;
+    }
+    
+    .navpane a {
+      padding: 6px 8px 6px 30px;
+      text-decoration: none;
+      font-size: 25px;
+      color: #f11212;
+      display: block;
+    } 
+    .maincontainer {
+      margin-left: 220px; 
+      font-size: 30px; 
+      padding: 0px 0px;
+    }
+
+    table, th, td {
+      border: 1px solid black;
+    }
+
+    th, td {
+      padding: 10px;
+    }
+    </style>
+    </head>
+    <body>
+    
+    <%- include('partials/navpanelhome') %>
+
+    
+    <div class="maincontainer">
+      <h2 style="color:red">SENECA LIBRARY</h2>
+      <article>
+      <h2>Edit Page</h2>
+      <p>This page will let you customize shit.</p>
+      <form name = "test" method="POST" action="/edit/save">
+        <label>Name:</label>
+        <input type="text" name="name" value="<%= bookmodel.name %>" />
+        <label>Author:</label>
+        <input type="text" name="author" value="<%= bookmodel.authorname %>" />
+        <input type="submit" value="Save" />
+      </form>
+
+
+
+
+      </article>
+
+    </div>
+
+    </body>
+    </html> 
+</html>
